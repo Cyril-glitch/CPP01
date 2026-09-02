@@ -1,0 +1,84 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cycolonn <cycolonn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/02 20:13:31 by cycolonn          #+#    #+#             */
+/*   Updated: 2026/09/02 21:10:54 by cycolonn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../inc/Harl.hpp"
+
+Harl::Harl()
+{
+    level[0]= "DEBUG";
+    level[1]= "INFO";
+    level[2]= "WARNING";
+    level[3]= "ERROR";
+
+    f[0] = &Harl::debug;
+    f[1] = &Harl::info;
+    f[2] = &Harl::warning;
+    f[3] = &Harl::error; 
+}
+
+void Harl::debug(void)
+{
+    std::cout << "\"I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!\"" << std::endl;
+}
+
+void Harl::info(void)
+{
+    std::cout << "\"I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!\"" << std::endl;
+}
+
+void Harl::warning(void)
+{
+    std::cout << "\"I think I deserve to have some extra bacon for free. I've been coming for years, whereas you started working here just last month.\"" << std::endl;
+}
+
+void Harl::error(void)
+{
+    std::cout << "\"This is unacceptable! I want to speak to the manager now.\"" << std::endl;
+}
+
+int Harl::getindex(std::string input)
+{
+    int i = 0;
+
+    while (i < 4)
+    {
+        if (input == level[i])
+            return i;
+        i++;
+    }
+    return -1;
+}
+
+void Harl::complain(std::string level)
+{
+    int i;
+
+    if ((i = getindex(level)) == -1)
+    {
+        std::cout << BL_RED << "Unknown level" << RESET << std::endl;
+        return ;
+    }
+    std::cout << ICE_BLUE << "Harl: " << RESET;
+    (this->*f[i])(); 
+}
+
+void getcmds(std::string &input)
+{
+    std::cout << std::endl;
+    std::cout << MINT << "Please enter a complains level :" << RESET;
+    std::getline(std::cin, input);
+    std::cout << std::endl;
+}
+
+Harl::~Harl()
+{
+}
