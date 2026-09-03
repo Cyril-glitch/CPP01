@@ -6,7 +6,7 @@
 /*   By: cycolonn <cycolonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/01 21:44:39 by cycolonn          #+#    #+#             */
-/*   Updated: 2026/09/01 23:21:15 by cycolonn         ###   ########.fr       */
+/*   Updated: 2026/09/03 18:07:21 by cycolonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ HumanA::HumanA(std::string name,Weapon &weaponREF) : _name(name), _weapon(weapon
 
 void HumanA::attack()
 {
-    std::cout << ICE_BLUE << _name << RESET <<" " << "attack whit their " << _weapon.getType() << std::endl;
+    std::cout << ICE_BLUE << _name << RESET <<" " << "attacks with their " << _weapon.getType() << std::endl;
 }
 
 HumanA::~HumanA()
