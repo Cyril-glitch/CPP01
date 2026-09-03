@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cycolonn <cycolonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/02 19:58:26 by cycolonn          #+#    #+#             */
-/*   Updated: 2026/09/03 17:34:56 by cycolonn         ###   ########.fr       */
+/*   Created: 2026/09/03 17:32:46 by cycolonn          #+#    #+#             */
+/*   Updated: 2026/09/03 17:33:27 by cycolonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Harl.hpp"
-#include "../inc/utils.hpp"
 
-int main()
+#include  "../inc/utils.hpp"
+
+void getcmds(std::string &input)
 {
-    Harl harl;
-    std::string complains;
-
-    while(std::cin.good())
-    {
-        getcmds(complains);
-        if (complains == "EXIT")
-            break;
-        harl.complain(complains);
-    }
-    std::cout << ICE_BLUE << "Harl: " << RESET << "\"Bye !\"" << std::endl;
+    std::cout << std::endl;
+    std::cout << MINT << "Please enter a complains level :" << RESET;
+    std::getline(std::cin, input);
+    std::cout << std::endl;
 }

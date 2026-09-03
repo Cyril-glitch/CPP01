@@ -6,7 +6,7 @@
 /*   By: cycolonn <cycolonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 20:13:31 by cycolonn          #+#    #+#             */
-/*   Updated: 2026/09/02 21:10:54 by cycolonn         ###   ########.fr       */
+/*   Updated: 2026/09/03 17:31:56 by cycolonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,6 @@ void Harl::complain(std::string level)
     }
     std::cout << ICE_BLUE << "Harl: " << RESET;
     (this->*f[i])(); 
-}
-
-void getcmds(std::string &input)
-{
-    std::cout << std::endl;
-    std::cout << MINT << "Please enter a complains level :" << RESET;
-    std::getline(std::cin, input);
-    std::cout << std::endl;
 }
 
 Harl::~Harl()

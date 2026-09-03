@@ -6,7 +6,7 @@
 /*   By: cycolonn <cycolonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 20:08:19 by cycolonn          #+#    #+#             */
-/*   Updated: 2026/09/02 21:07:00 by cycolonn         ###   ########.fr       */
+/*   Updated: 2026/09/03 17:34:28 by cycolonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,5 @@ class Harl
         void warning(void);
         void error(void);
 };
-
-void getcmds(std::string &input);
 
 #endif

@@ -7,7 +7,8 @@ OBJ_DIR = obj
 BIN_DIR = bin
 
 SRC = src/main.cpp \
-	  src/Harl.cpp 
+	  src/Harl.cpp \
+	  src/utils.cpp 
 
 
 

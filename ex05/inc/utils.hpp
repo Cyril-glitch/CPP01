@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cycolonn <cycolonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/02 19:58:26 by cycolonn          #+#    #+#             */
-/*   Updated: 2026/09/03 17:34:56 by cycolonn         ###   ########.fr       */
+/*   Created: 2026/09/03 17:30:53 by cycolonn          #+#    #+#             */
+/*   Updated: 2026/09/03 17:33:38 by cycolonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Harl.hpp"
-#include "../inc/utils.hpp"
+#ifndef UTILS_HPP
+#define UTILS_HPP
 
-int main()
-{
-    Harl harl;
-    std::string complains;
+# include <iostream>
+# include "../inc/colors.hpp"
 
-    while(std::cin.good())
-    {
-        getcmds(complains);
-        if (complains == "EXIT")
-            break;
-        harl.complain(complains);
-    }
-    std::cout << ICE_BLUE << "Harl: " << RESET << "\"Bye !\"" << std::endl;
-}
+
+void getcmds(std::string &input);
+
+#endif
